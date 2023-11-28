@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<head>
+	<link rel="stylesheet" href="style.css">
+	<title> Прототип </title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"> 
+    </script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.1.2/chart.umd.js"> 
+    </script> 	
+</head>
+<body>	
+
+<div class="kupaneg close">
+  <div class="agotiptip-detaliza">
+  <i class='bx bx-menu' ></i>
+  </div>
+  <ul class="upegedsa">
+	  <li>
+		  <a href="#">
+			  <i class='bx bx-home' ></i>
+			  <span class="link_name">Домой</span>
+		  </a>
+	  </li>
+	  <li>
+		  <div class="iocn-link">
+			  <a href="#">
+				  <i class='bx bx-book' ></i>
+				  <span class="link_name">Справочники</span>
+			  </a>
+				  <i class='bx bxs-chevron-down arrow' ></i>
+		  </div>
+		  <ul class="kaned-sakopa">
+			  <li><a class="link_name" href="#">Справочники</a></li>
+			  <li><a href="#">Чё-то 1</a></li>
+			  <li><a href="#">Чё-то 2</a></li>
+			  <li><a href="#">Чё-то 3</a></li>
+		  </ul>
+	  </li>
+	  <li>
+		  <a href="#">
+			  <i class='bx bx-calendar' ></i>
+			  <span class="link_name">Планы проверок</span>
+		  </a>
+	  </li>
+	  <li>
+		  <div class="iocn-link">
+			  <a href="#">
+				  <i class='bx bx-pie-chart-alt-2' ></i>
+				  <span class="link_name">Результаты проверок</span>
+			  </a>
+			  	  <i class='bx bxs-chevron-down arrow' ></i>
+		  </div>
+		  <ul class="kaned-sakopa">
+			  <li><a class="link_name" href="#">Результаты проверок</a></li>
+			  <li><a href="#">Чё-то 1</a></li>
+			  <li><a href="#">Чё-то 2</a></li>
+			  <li><a href="#">Чё-то 3</a></li>
+		  </ul>
+	  </li>
+	  <li>
+		  <div class="iocn-link">
+			  <a href="#">
+				  <i class='bx bx-calendar-check' ></i>
+				  <span class="link_name">Отслеживание мероприятий</span>
+			  </a>
+			  	  <i class='bx bxs-chevron-down arrow' ></i>
+		  </div>
+		  <ul class="kaned-sakopa">
+			  <li><a class="link_name" href="#">Отслеживание мероприятий</a></li>
+			  <li><a href="#">Чё-то 1</a></li>
+			  <li><a href="#">Чё-то 2</a></li>
+			  <li><a href="#">Чё-то 3</a></li>
+		  </ul>
+	  </li>
+	  <li>
+		  <div class="iocn-link">
+			  <a href="#">
+				  <i class='bx bx-taxi' ></i>
+				  <span class="link_name">Администрирование</span>
+			  </a>
+			  	  <i class='bx bxs-chevron-down arrow' ></i>
+		  </div>
+		  <ul class="kaned-sakopa">
+			  <li><a class="link_name" href="#">Администрирование</a></li>
+			  <li><a href="#">Чё-то 1</a></li>
+			  <li><a href="#">Чё-то 2</a></li>
+			  <li><a href="#">Чё-то 3</a></li>
+		  </ul>
+	  </li>
+	  <li>
+		  <div class="options">
+			  <a href="#">
+				  <i class='bx bx-cog'></i>
+				  <span class="link_name">Настройки</span>
+			  </a>
+		  </div>
+	  </li>
+	  <li>
+		  <div class="info">
+			  <a href="#">
+				  <i class='bx bx-user-voice' ></i>
+				  <span class="link_name">Информация</span>
+			  </a>
+		  </div>
+	  </li>
+  </ul>
+</div>
+  
+<script>
+  let arrow = document.querySelectorAll(".arrow");
+  for (var i = 0; i < arrow.length; i++) {
+  arrow[i].addEventListener("click", (e)=>{
+  let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+  arrowParent.classList.toggle("showMenu");
+  });
+  }
+  let kupaneg = document.querySelector(".kupaneg");
+  let kupanegBtn = document.querySelector(".bx-menu");
+  console.log(kupanegBtn);
+  kupanegBtn.addEventListener("click", ()=>{
+  kupaneg.classList.toggle("close");
+  });
+</script>
+
+<div class="header">
+	<div class="conteiner">
+		<div class="header-logo">
+			<img src="img/logo.png" alt="">	
+		</div>
+
+		<div class="search">
+			<a href="#">
+				<img src="img/search.png">
+			</a>	
+		</div>	
+
+		<div class="message">
+			<a href="#">
+				<img src="img/message.png">
+			</a>	
+		</div>	
+
+		<div class="login">
+			<a href="#">
+				<img src="img/login.png">
+			</a>	
+		</div>	
+	</div>
+</div>	
+
+<div class="backgrnd">	
+	<div class="l-gear">
+		<img src="img/left gear.png">
+	</div>
+	<div class="c-gear">
+		<img src="img/center gear.png">
+	</div>
+	<div class="r-gear">
+		<img src="img/right gear.png">
+	</div>
+	<div class = 'osnova'></div>
+	<div class = 'plitka-grafik-pie'>
+		<div class="text_1">
+			<h2>Аудиты за месяц</h2>
+		</div>
+		<div> 
+            <canvas id="pieChartID"></canvas> 
+        </div> 
+	</div>
+	<div class = 'plitka-grafik-stolby'>
+		<div class="text_2">
+			<h2>Аудиты за год</h2>
+		</div>
+		<div class="grafik-stolby">
+			<canvas id="barChartID"></canvas>
+		</div>
+		<div class="bloc"></div>			
+	</div>
+	<div class ='table'>
+		<div class='osnova_table'>
+			<table style="text-align:center;" id="my_table">
+				<thead>
+					<tr>
+					    <th id="status">Статус</th>
+					    <th id="number">№</th>
+					    <th id="object">Объект</th>
+						<th id="fio">Проверяющий</th>
+					    <th id="start_check">Начало проверки</th>
+					    <th id="deadline">Дедлайн</th>
+					</tr>
+				</thead>
+				<tbody id="table"></tbody>
+			</table>
+		</div>
+		<div class="line_1">
+		</div>
+		<div class="line_2">
+		</div>
+		<div class="line_3">
+		</div>
+		<div class="line_4">
+		</div>	
+		<div class="text">
+			<h2>Проверки на сегодня</h2>
+		</div>	
+	</div>
+</div>
+
+<script> 
+        new Chart($("#pieChartID"), { 
+            type: 'pie', 
+            options: { 
+                legend: { display: true }, 
+                indexAxis: 'x', 
+            }, 
+            data: { 
+                labels: ["Объект 1", "Объект 2", "Объект 3", "Объект 4", "Объект 5"], 
+                datasets: [ 
+                    { 
+                        backgroundColor: ["#f9b872", "#FFAA4E", 
+                            "#75CAD6", "#FFE9D0", "#FFA33BAB"], 
+                        data: [234, 356, 819, 732, 213] 
+                    } 
+                ] 
+            }             
+        }); 
+</script> 	
+<script>
+        new Chart($("#barChartID"), { 
+            type: 'bar', 
+            options: {
+            	legend:{
+                	display: false 
+            	},
+            	tooltips: {
+            		enabled: false
+         		} 
+            }, 
+            data: { 
+                labels: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", 
+                	"Июль", "Август", "Сентябрь", "Октябрь"], 
+                datasets: [ 
+                    { 
+                    	labels: 0,
+                        backgroundColor: ["#f9b872"], 
+                        data: [80, 60, 40, 50, 60, 40, 30, 20, 70, 60] 
+                    } 
+                ] 
+            }             
+        }); 
+</script>  
+<script>
+/**
+ * Тип данных для студента
+ * @typedef {Object} StudentType
+ * @property {string} surname
+ * @property {string} name
+ * @property {string} start_check
+ * @property {string} deadline
+ * @property {string} status
+ */
+//Список студентов
+/** @type {StudentType[]} */
+let arr = [
+    {
+        surname: 'Арзамасцев',
+        name: 'Николай',      
+        start_check: '23.10.23',
+        deadline: '24.10.23',
+        status: 'Проверено',
+        number: '265',
+        object: 'Объект 4'
+    },
+    {
+        surname: 'Иванов',
+        name: 'Николай',
+        start_check: '22.10.23',
+        deadline: '23.10.23',
+        status: 'Проверено',
+        number: '489',
+        object: 'Объект 5'
+    },
+    {
+        surname: 'Петров',
+        name: 'Николай',
+        start_check: '19.10.23',
+        deadline: '20.10.23',
+        status: 'Не проверено',
+        number: '485',
+        object: 'Объект 3'
+    },
+    {
+        surname: 'Ягоднкина',
+        name: 'Николай',
+        start_check: '15.10.23',
+        deadline: '16.10.23',
+        status: 'Допроверка',
+        number: '695',
+        object: 'Объект 1'
+    },
+    {
+        surname: 'Малинкина',
+        name: 'Николай',
+        start_check: '09.10.23',
+        deadline: '10.10.23',
+        status: 'Не проверено',
+        number: '487',
+        object: 'Объект 2'
+    },
+    {
+        surname: 'Клюкова',
+        name: 'Николай',
+        start_check: '26.10.23',
+        deadline: '27.10.23',
+        status: 'Проверено',
+        number: '357',
+        object: 'Объект 6'
+    },
+];
+// Порядок сортировки
+let ordASC = 1;
+// Сортируемое поле
+let ordField = '';
+
+/**
+ * Функция возвращает полное имя студента
+ * @param {StudentType} student
+ * @return {string}
+ * */
+function getFullName(student) {
+    return student.name + "\n" + student.surname;
+}
+
+/**
+ * Функция сортировки для таблицы
+ * @param {StudentType} a
+ * @param {StudentType} b
+ * @return {number}
+ */
+function sorterName(a, b) {
+    return getFullName(a).localeCompare(getFullName(b)) * ordASC;
+}
+
+/**
+ * Функция сортировки для таблицы
+ * @param {StudentType} a
+ * @param {StudentType} b
+ * @return {number}
+ */
+function sortString(a, b) {
+    return a[this.orderBy].localeCompare(b[this.orderBy]) * ordASC;
+}
+
+/** @param {string} id */
+function selectOrd(id) {
+    if (id === ordField) {
+        ordASC *= -1;
+    } else {
+        ordField = id;
+        ordASC = 1;
+    }
+}
+/** @param {PointerEvent} e */
+function order(e) {
+    if (e.target && e.target.id) {
+        switch (e.target.id) {
+            case 'fio':
+                selectOrd(e.target.id);
+                arr = arr.sort(sorterName);                    
+                break;
+            default:
+                selectOrd(e.target.id);
+                const sortBnd = sortString.bind({orderBy: e.target.id});
+                arr = arr.sort(sortBnd);                    
+        }
+        buildTable(arr);
+    }
+}
+
+const header = document.getElementsByTagName('th');
+for (let i = 0; i < header.length; i++) {
+    header[i].addEventListener('click', order);
+}
+
+/** @param {StudentType[]} data */
+function buildTable(data) {
+    let table = document.getElementById('table')
+    table.innerHTML = '';
+    let today = new Date()
+    let todayYear = today.getFullYear()
+    table.innerHTML = ''
+    for (let i = 0; i < data.length; i++) {
+        let fioObj = getFullName(data[i]);
+        let old = data[i].start_check;//age(data[i].start_check);
+        let course = data[i].deadline; //find_end_study(data[i].deadline)
+        let row = `
+            <tr>
+                <td>${data[i].status}</td>
+                <td>${data[i].number}</td>
+                <td>${data[i].object}</td>
+                <td>${fioObj}</td>
+                <td>${data[i].start_check}</td>
+                <td>${data[i].deadline}</td>
+            <tr/>
+            `;
+        table.innerHTML += row;
+    }
+}
+
+buildTable(arr);
+</script>
+</div>
+</body>
+</html>
